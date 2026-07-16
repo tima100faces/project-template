@@ -1,10 +1,10 @@
 # DECISIONS
 
-<!-- Только для уровня Project. Для Lightweight — удалить файл.
-     Пишем только существенное: то, что дорого переигрывать. -->
+<!-- Project level only. Delete this file for Lightweight.
+     Log only what is expensive to reverse. -->
 
-## <дата> — <решение одной строкой>
-- **Что решили:**
-- **Почему:**
-- **Что ещё рассматривали:**
-- **Последствия / чем платим:**
+## <date> — <decision in one line>
+- **Decided:**
+- **Why:**
+- **Alternatives considered:**
+- **Consequences / what we pay for it:**

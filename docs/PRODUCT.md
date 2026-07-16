@@ -1,25 +1,25 @@
 # PRODUCT
 
-<!-- Только для уровня Project. Для Lightweight — удалить файл. -->
+<!-- Project level only. Delete this file for Lightweight. -->
 
-## Цель
-<какую боль решаем>
+## Goal
+<what pain this solves>
 
-## Кто пользователь
-<кто конкретно, а не «все»>
+## Who the user is
+<someone specific, not "everyone">
 
-## Как он решает это сейчас
-<без этого MVP не проверить>
+## How they solve it today
+<without this the MVP cannot be judged>
 
-## Границы MVP
-Входит:
+## MVP boundaries
+In:
 -
 
-НЕ входит:
+Out:
 -
 
-## Основные сценарии
+## Main scenarios
 1.
 
-## Ключевые функции
+## Key features
 -

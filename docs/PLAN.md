@@ -1,18 +1,18 @@
 # PLAN
 
-<!-- Только для уровня Project. Для Lightweight — удалить файл. -->
+<!-- Project level only. Delete this file for Lightweight. -->
 
-## Текущий этап
-<одна строка>
+## Current stage
+<one line>
 
-## Ближайшие задачи
+## Next tasks
 - [ ]
 
-## Сделано
+## Done
 - [x]
 
-## Отложено
+## Parked
 -
 
-## Риски
+## Risks
 -

@@ -1,29 +1,29 @@
 # STATUS
 
-<!-- Единственный обязательный документ. Обновляется в конце каждой сессии.
-     Пишется так, чтобы новый агент понял проект без истории чата. -->
+<!-- The only mandatory document. Updated at the end of every session.
+     Write it so a fresh agent can understand the project with no chat history. -->
 
-**Обновлено:** <дата>
-**Уровень:** Lightweight | Project | Critical
-**Ветка:** <текущая>
+**Updated:** <date>
+**Level:** Lightweight | Project | Critical
+**Branch:** <current>
 
-## Что сейчас работает
-
--
-
-## Над чем работали последним
+## What works now
 
 -
 
-## Что не завершено
+## What we worked on last
 
 -
 
-## Известные проблемы
+## Unfinished
 
 -
 
-## Следующее действие
+## Known problems
+
+-
+
+## Next action
 
 -
 
@@ -31,12 +31,12 @@
 
 ## Handoff
 
-<!-- Заполнять при передаче другому агенту или модели. -->
+<!-- Fill in when handing over to another agent or model. -->
 
-- **Предыдущая роль:**
-- **Выполненная работа:**
-- **Текущее состояние:**
-- **Незакрытые вопросы:**
-- **Риски:**
-- **Следующее рекомендуемое действие:**
-- **Обязательно прочитать:** `CLAUDE.md`, `docs/STATUS.md`, <ещё файлы>
+- **Previous role:**
+- **Work completed:**
+- **Current state:**
+- **Open questions:**
+- **Risks:**
+- **Recommended next action:**
+- **Must read:** `CLAUDE.md`, `docs/STATUS.md`, <other files>

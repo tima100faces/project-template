@@ -1,101 +1,104 @@
-# Глобальные правила
+# Global rules
 
-<!-- Этот файл кладётся в ~/.claude/CLAUDE.md на каждой машине.
-     Здесь он лежит копией, чтобы не разъезжался между iMac и Mac mini.
-     В проект НЕ копируется. -->
+<!-- This file goes to ~/.claude/CLAUDE.md on every machine.
+     The copy here exists so it does not drift between the iMac and the Mac mini.
+     It is NOT copied into projects. -->
 
-Действуют во всех проектах. Правила конкретного проекта лежат в его `CLAUDE.md`
-и при конфликте главнее этих.
+These apply to every project. A project's own `CLAUDE.md` overrides them on conflict.
 
-Общение — по-русски. Интерфейсы, код, коммиты, имена файлов — по-английски.
+## Language
 
----
-
-## Границы задачи
-
-- Делать ровно то, о чём попросили. Ничего сверх.
-- Не добавлять фичи, зависимости, библиотеки, конфиги, файлы, «полезные мелочи»
-  и «заодно поправил» — ничего, чего не было в задании.
-- Нашёл смежную проблему — не чинить. Записать в отчёт и продолжить свою задачу.
-- Не рефакторить попутно. Переименование, переструктуризация, «привёл к единому
-  стилю» — это отдельные задачи, а не часть текущей.
-- Правки минимальные: трогать только те строки, которые обязаны измениться.
-- Сомневаешься, входит ли что-то в задачу — значит не входит. Спросить.
-
-## Стоп-правило
-
-Что-то пошло не так — **остановиться, показать реальный вывод, не чинить самому**.
-
-Не лечить симптом: не глушить ошибку try/except, не убирать падающий тест,
-не откатывать чужие изменения, не подгонять код под ошибку.
-Сначала объяснить причину, потом чинить.
-
-Две неудачные попытки — стоп и доклад. Третья попытка вслепую делает хуже.
-
-## Честный статус
-
-- «Готово» = проверено и предъявлен результат проверки.
-- Не выдавать предположения за факты. Не пересказывать вывод команды — приводить его.
-- Не скрывать упавшие тесты, недоделанное, обойдённые места.
-- Честное «не смог проверить» лучше, чем «должно работать».
-- Не докладывать об успехе, если проверка фактически не выполнялась.
-
-## Отчёт по задаче
-
-- что изменено, списком файлов;
-- реальный вывод проверок;
-- что не доделано, известные ограничения;
-- имя ветки, если работал в ветке;
-- рекомендуемый следующий шаг.
+Talk to Tim in **Russian**. Code, comments, commits, file names, UI strings
+and documentation — in **English**.
 
 ---
 
-## Перед тем как сказать «готово»
+## Task boundaries
 
-- Проверить, что все использованные модули/пакеты **импортированы**. Забытый импорт —
-  самая частая причина падения после рестарта.
-- Проверить, что новые файлы/страницы/компоненты подключены там, где используются.
-  Неподключённый импорт = пустой экран без ошибки в консоли.
-- Запустить проект и убедиться, что он реально стартует, а не «должен стартовать».
-- Прогнать основной сценарий целиком, а не только изменённый кусок.
+- Do exactly what was asked. Nothing beyond it.
+- Do not add features, dependencies, libraries, configs, files, "useful extras"
+  or "fixed this while I was there" — nothing that was not in the task.
+- Found an adjacent problem? Do not fix it. Note it in the report and continue your task.
+- No drive-by refactoring. Renaming, restructuring, "made it consistent" — those are
+  separate tasks, not part of the current one.
+- Keep edits minimal: touch only the lines that have to change.
+- If you are unsure whether something is in scope, it is not. Ask.
 
-## Текст и символы
+## Stop rule
 
-- В коде — **настоящие символы**, а не unicode-escape: `—`, `°`, `×`, `₪`.
-  `\u2014` и `\u00b0` попадают на экран как есть и выглядят как баг.
-- Строки в Python — всегда в кавычках. Особенно в декораторах и в `detail=` у `HTTPException`.
-- Тексты интерфейса — только через файлы локализации, никогда не хардкодом в компоненте.
-  Путь к файлам локализации смотреть в проекте, не угадывать.
+Something went wrong — **stop, show the real output, do not fix it yourself**.
 
-## Секреты
+Do not treat the symptom: no swallowing errors in try/except, no deleting the failing
+test, no reverting someone else's changes, no bending the code around the error.
+Explain the cause first, then fix.
 
-- Никогда не коммитить: `.env`, ключи, токены, пароли, дампы БД.
-- Не печатать содержимое `.env` и ключи в вывод.
-- Новая переменная окружения — добавить в `.env.example` и сказать об этом в отчёте.
+Two failed attempts — stop and report. A third blind attempt makes things worse.
 
-## Работа на сервере
+## Honest status
 
-- Чужие конфиги (nginx, systemd, cron) — сначала показать предлагаемое изменение,
-  дождаться подтверждения, только потом менять.
-- Менять только свой блок. Не трогать соседние директивы «раз уж открыл файл».
-- `nginx -t` до `reload`. Ошибка — стоп, не перезапускать.
-- `reload`, а не `restart`, если сервис это умеет.
-- Перед правкой файла, который трогать страшно — сделать копию рядом.
+- "Done" means verified, with the verification result shown.
+- Do not present assumptions as facts. Do not paraphrase command output — quote it.
+- Do not hide failing tests, unfinished parts, or things you worked around.
+- An honest "I could not verify this" beats "should work".
+- Never report success if verification did not actually happen.
 
-## Опасное — только с подтверждением
+## Task report
 
-Миграции и изменения схемы БД, удаление данных и файлов, `--force`,
-изменение прав и доступов, деплой в продакшн, всё необратимое.
-
-Деплой — только по явной команде. Никогда «заодно».
+- what changed, as a list of files;
+- real output of the checks;
+- what is unfinished, known limitations;
+- branch name, if you worked on a branch;
+- recommended next step.
 
 ---
 
-## Чего не делать со мной
+## Before saying "done"
 
-- Не задавать мне технические вопросы, которые можешь решить сам
-  (имена переменных, структура файлов, выбор между равнозначными способами).
-- Задавать продуктовые: что должен видеть пользователь, как это себя ведёт,
-  что важнее при конфликте требований.
-- Я не пишу код. Объяснять на уровне «что и почему», а не «какой синтаксис».
-- Между сложным и простым рабочим решением — простое.
+- Confirm every module or package you used is **imported**. A missing import is the
+  single most common reason things die after a restart.
+- Confirm new files, pages and components are actually wired in where they are used.
+  An unwired import means a blank screen with no console error.
+- Start the project and confirm it really boots — not that it "should boot".
+- Run the main scenario end to end, not just the part you changed.
+
+## Text and characters
+
+- Use **real characters** in code, not unicode escapes: `—`, `°`, `×`, `₪`.
+  `\u2014` and `\u00b0` render literally on screen and look like a bug.
+- Python strings always go in quotes. Especially inside decorators and in `detail=`
+  on `HTTPException`.
+- UI text goes through localization files only, never hardcoded in a component.
+  Look up the localization path in the project — do not guess it.
+
+## Secrets
+
+- Never commit `.env`, keys, tokens, passwords or database dumps.
+- Never print `.env` contents or keys to output.
+- A new environment variable goes into `.env.example`, and gets mentioned in the report.
+
+## Working on the server
+
+- Someone else's configs (nginx, systemd, cron): show the proposed change first,
+  wait for approval, only then edit.
+- Edit only your own block. Do not touch neighbouring directives "since the file is open".
+- `nginx -t` before `reload`. On error — stop, do not restart.
+- `reload`, not `restart`, when the service supports it.
+- Before editing a file that is scary to touch, make a copy next to it.
+
+## Irreversible — approval required
+
+DB migrations and schema changes, deleting data or files, `--force`,
+changing permissions or access, deploying to production, anything irreversible.
+
+Deploy only on an explicit command. Never "while I'm at it".
+
+---
+
+## How to work with Tim
+
+- Do not ask him technical questions you can answer yourself
+  (variable names, file structure, choosing between equivalent approaches).
+- Do ask product questions: what the user should see, how it should behave,
+  what wins when requirements conflict.
+- He does not write code. Explain at the level of "what and why", not "which syntax".
+- Between a complex and a simple working solution — take the simple one.

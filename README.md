@@ -1,16 +1,25 @@
 # project-template
 
-Скелет нового проекта. Процесс работы описан в `CLAUDE.md`.
+Skeleton for a new project. The working process lives in `CLAUDE.md`.
 
-## Как начать проект
+## Starting a project
 
-1. Скопировать содержимое этого репо в новый проект (без `.git`).
-2. Заполнить шапку `CLAUDE.md`: название, уровень, стек, запуск, проверка.
-3. Определить **уровень сложности** — он решает, что оставить:
-   - **Lightweight** — оставить `CLAUDE.md` + `docs/STATUS.md`, остальное из `docs/` удалить.
-   - **Project** — оставить всё.
-   - **Critical** — оставить всё + отдельный план на каждое опасное изменение.
-4. `git init`, первый коммит.
+1. Copy the contents of this repo into the new project (without `.git` and `global/`).
+2. Fill in the header of `CLAUDE.md`: name, level, stack, start command, checks.
+3. Pick the **complexity level** — it decides what to keep:
+   - **Lightweight** — keep `CLAUDE.md` + `docs/STATUS.md`, delete the rest of `docs/`.
+   - **Project** — keep everything.
+   - **Critical** — keep everything, plus a separate plan for each risky change.
+4. `git init`, first commit.
 
-Сквозные правила для всех проектов лежат в `~/.claude/CLAUDE.md` на каждой машине
-и подгружаются Claude Code автоматически. Здесь их дублировать не нужно.
+## Global rules
+
+`global/CLAUDE.md` holds the rules that apply to every project. It lives here so it
+does not drift between machines. Install it on each machine:
+
+```bash
+cp global/CLAUDE.md ~/.claude/CLAUDE.md
+```
+
+Claude Code loads it automatically at the start of every session, in every project.
+Do not copy it into individual projects.
