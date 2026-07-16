@@ -1,0 +1,29 @@
+# Секреты — никогда
+.env
+.env.*
+*.key
+*.pem
+secrets.json
+
+# Python
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# Node
+node_modules/
+dist/
+build/
+
+# БД и данные
+*.db
+*.sqlite
+*.sqlite3
+
+# Мусор ОС
+.DS_Store
+Thumbs.db
+
+# Claude Code — локальное
+.claude/settings.local.json
