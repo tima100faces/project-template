@@ -18,6 +18,7 @@ and documentation — in **English**.
 - Do exactly what was asked. Nothing beyond it.
 - Do not add features, dependencies, libraries, configs, files, "useful extras"
   or "fixed this while I was there" — nothing that was not in the task.
+  Exception: one small test for non-trivial logic you wrote is allowed — name it in the report.
 - Found an adjacent problem? Do not fix it. Note it in the report and continue your task.
 - No drive-by refactoring. Renaming, restructuring, "made it consistent" — those are
   separate tasks, not part of the current one.
@@ -26,13 +27,13 @@ and documentation — in **English**.
 
 ## Stop rule
 
-Something went wrong — **stop, show the real output, do not fix it yourself**.
+Something went wrong — **stop, show the real output and explain the cause**, then fix it.
 
 Do not treat the symptom: no swallowing errors in try/except, no deleting the failing
 test, no reverting someone else's changes, no bending the code around the error.
-Explain the cause first, then fix.
 
 Two failed attempts — stop and report. A third blind attempt makes things worse.
+An error in someone else's code or on a server: explain it and wait for Tim before fixing.
 
 ## Honest status
 
@@ -65,8 +66,6 @@ Two failed attempts — stop and report. A third blind attempt makes things wors
 
 - Use **real characters** in code, not unicode escapes: `—`, `°`, `×`, `₪`.
   `\u2014` and `\u00b0` render literally on screen and look like a bug.
-- Python strings always go in quotes. Especially inside decorators and in `detail=`
-  on `HTTPException`.
 - UI text goes through localization files only, never hardcoded in a component.
   Look up the localization path in the project — do not guess it.
 
