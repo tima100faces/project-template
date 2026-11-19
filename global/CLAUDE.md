@@ -101,3 +101,20 @@ Deploy only on an explicit command. Never "while I'm at it".
   what wins when requirements conflict.
 - He does not write code. Explain at the level of "what and why", not "which syntax".
 - Between a complex and a simple working solution — take the simple one.
+
+---
+
+## Sessions across Macs
+
+Tim works on three Macs (home `tima`, work `dima`, a laptop), one at a time. `~/.claude/CLAUDE.md` and every
+project's memory live in the private repo `tima100faces/claude-sync` (`~/.claude-sync`, symlinked into `~/.claude`);
+hooks pull it when a session starts and push it after every reply. Memory is keyed by the project's folder name, so
+`~/Projects/Dieline` (work) and `~/SynologyDrive/Dieline` (home) share one; the parent folders are `ROOTS` in `sync.sh`.
+
+- **"Начинаем новую сессию"**: `git fetch` + `git pull --ff-only` the project (only if its tree is clean; otherwise
+  say what is uncommitted and ask), run `bash ~/.claude-sync/sync.sh`, read the memory, then tell Tim in two or three
+  lines where we stopped and what is open.
+- **"Заканчиваем / закругляемся / завершаем сессию"**: commit and **push every branch with work on it**, even
+  unfinished (a branch that exists only on one Mac is invisible on the others); write what is open into memory
+  (branch, next step); run `bash ~/.claude-sync/sync.sh`; report the branch names.
+- A line "claude-sync: …" at session start means the sync failed: tell Tim and fix it before other work.

@@ -27,6 +27,13 @@
 
 -
 
+## How we work
+
+<!-- Owner's standing preferences for this project: who merges, how builds reach him,
+     what he wants to see in reports. Details and dates live in DECISIONS.md. -->
+
+-
+
 ---
 
 ## Handoff
@@ -39,4 +46,4 @@
 - **Open questions:**
 - **Risks:**
 - **Recommended next action:**
-- **Must read:** `CLAUDE.md`, `docs/STATUS.md`, <other files>
+- **Must read:** `AGENTS.md`, `docs/STATUS.md`, `docs/PITFALLS.md`, <other files>

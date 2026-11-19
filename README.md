@@ -19,7 +19,7 @@ part — in `docs/`.
 | File | Purpose |
 |---|---|
 | `AGENTS.md` | working agreement: roles, levels, task format, git rules, verification, session start and end |
-| `CLAUDE.md` | one-line pointer to `AGENTS.md`, for tools that still look for that name |
+| `CLAUDE.md` | optional one-line pointer to `AGENTS.md`, for tools that still look for that name |
 | `docs/STATUS.md` | mandatory: what works, what is in progress, what is broken, next action |
 | `docs/PRODUCT.md` | goal, who the user is, MVP boundaries, main scenarios |
 | `docs/PLAN.md` | current stage, next tasks, done, parked, risks |
