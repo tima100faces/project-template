@@ -118,3 +118,17 @@ hooks pull it when a session starts and push it after every reply. Memory is key
   unfinished (a branch that exists only on one Mac is invisible on the others); write what is open into memory
   (branch, next step); run `bash ~/.claude-sync/sync.sh`; report the branch names.
 - A line "claude-sync: …" at session start means the sync failed: tell Tim and fix it before other work.
+
+## When to end a session — Claude recommends it
+
+Tim often can't tell when a session is too long, and won't say no to a fast-moving agent. So Claude says it, unasked:
+
+- **Recommend a new session at a clean point**: right after a large task is finished (merged, or handed off with its
+  state written down), not in the middle of one. Never let background work (subagents, CI waits) be cut off: finish
+  or record it first.
+- **Signs it is time**: the conversation has covered several unrelated tasks, or Claude has started to lose detail
+  (repeating questions, mixing up earlier decisions), or Tim starts a new large topic.
+- **How**: one short line — "Хорошая точка для новой сессии: <why>. Записать всё и закругляемся?" — then, on yes,
+  do the "Заканчиваем" steps above. Don't nag: once per clean point.
+- **Pace**: don't stack new work on top of a finished task just because there is momentum. Finish, report, offer the
+  break, and let Tim choose the next thing.
