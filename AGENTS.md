@@ -19,8 +19,8 @@
 ## What this file is
 
 This is the project's working agreement, and it is read by whichever agent works here — Claude Code,
-Codex, Hermes/Rusty. `AGENTS.md` is the name agents look for; a `CLAUDE.md` beside it is only a
-pointer for older tools.
+Codex, Hermes/Rusty. `AGENTS.md` is the name most agents look for; the `CLAUDE.md` beside it
+imports this file for Claude Code (`@AGENTS.md`) and must stay.
 
 The repo is the source of truth: not memory, not chat history, not a wiki page.
 
@@ -86,16 +86,16 @@ Docs: `docs/STATUS.md` + `docs/PITFALLS.md`. Git: commits straight to `main`.
 
 **Project** — the thing is alive and in use.
 Docs: `STATUS.md` + `PRODUCT.md` + `PLAN.md` + `DECISIONS.md` + `PITFALLS.md`.
-Git: commits straight to `main`, one commit per finished step — the history must be revertable
-step by step.
+Git: small fixes straight to `main`, one commit per finished step — the history must be revertable
+step by step; sizeable tasks go through a branch + PR (see "Git and deploy").
 
 **Critical** — auth, payments, personal data, DB migrations, data deletion,
 production release, anything irreversible.
 Separate plan + branch + PR + explicit owner approval before merge.
 
 A Project-level change that touches more than one component, or changes data, is treated as Critical
-until the owner rules otherwise. Raising the level is the owner's call, not the agent's. Lowering it —
-never.
+until the owner rules otherwise. Changing the level — up or down — is the owner's call only. The agent
+never lowers it, and proposes raising it with a reason.
 
 ---
 
